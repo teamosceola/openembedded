@@ -9,6 +9,7 @@ PR = "r3"
 
 SRC_URI = "${DEBIAN_MIRROR}/main/i/ifupdown/ifupdown_${PV}.tar.gz;name=ifupdown \
            file://busybox.patch \
+           file://dhclient.patch \
            file://zeroconf.patch \
            file://init "
 
