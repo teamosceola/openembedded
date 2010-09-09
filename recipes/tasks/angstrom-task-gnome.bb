@@ -12,35 +12,47 @@ XSERVER ?= "xserver-xorg \
            xf86-input-keyboard \
 "
 
-PR = "r13"
+PR = "r14"
 
-PACKAGES += "task-gnome-apps task-gnome-fonts task-gnome task-gnome-gstreamer task-gnome-perl task-gnome-pulseaudio task-gnome-themes task-gnome-totem task-gnome-xserver-base task-gnome-xserver"
+PACKAGES += "task-gnome-apps task-gnome-sdk task-gnome-fonts task-gnome task-gnome-gstreamer task-gnome-perl task-gnome-cups task-gnome-pulseaudio task-gnome-themes task-gnome-totem task-gnome-xserver-base task-gnome-xserver"
 
 DEPENDS = "gst-plugins-ugly"
 
 RDEPENDS_task-gnome-apps = " \
-  abiword \
+  abiword-meta \
   cheese \
   claws-mail \
   epiphany epiphany-extensions \
   swfdec swfdec-gnome swfdec-mozilla \
-  evince \
+  eog \
+  evince  evince-nautilus-extension \
+  firefox gecko-mediaplayer-firefox-hack \
   gcalctool \
-  gedit \
+  gedit gedit-plugins \
+  gftp \
   gimp \
-  gnome-games \
+  gnome-games gnome-games-extra-data \
   gnome-mplayer \
-  gecko-mediaplayer-firefox-hack \
   gnumeric \
   gphoto2 \
   gthumb \
   pidgin \
   synergy \
   vnc \
-  x11vnc angstrom-x11vnc-xinit \
-  xmms \
+  x11vnc \
   xterm \
-  eog \
+ "
+
+RDEPENDS_task-gnome-sdk = " \
+  cron cron-dev \
+  geany \
+  git \
+  gtk+-dev \
+  ldd \
+  libltdl \
+  libtool libtool-dev \
+  pkgconfig \
+  task-native-sdk \
  "
 
 RDEPENDS_task-gnome-fonts = " \
@@ -63,13 +75,17 @@ RDEPENDS_task-gnome = " \
   gdm \
   gnome-control-center \
   gnome-applets \
+  gnome-backgrounds \
   gnome-bluetooth \
   gnome-desktop \
+#  gnome-disk-utility \
   gnome-doc-utils \
   gnome-keyring gnome-keyring-pam-plugin libpam-meta pam-plugin-ck-connector \
   gnome-media \
   gnome-menus \
   gnome-mime-data \
+  gnome-mount \
+  gnome-nettool \
 #  gnome-packagekit packagekit packagekit-gtkmodule \
   gnome-panel libpanel-applet libgweather-locationdata \
   gnome-power-manager gnome-power-manager-applets \
@@ -97,7 +113,7 @@ RDEPENDS_task-gnome = " \
   gvfs \
   libgnome-bin \
   metacity \
-  nautilus nautilus-cd-burner desktop-file-utils gnome-mount \
+  nautilus desktop-file-utils gnome-mount gamin \
   networkmanager network-manager-applet networkmanager-openvpn modemmanager \
   policykit-gnome policykit \
   zenity \
@@ -128,19 +144,27 @@ RDEPENDS_task-gnome-perl = " \
 "
 
 RDEPENDS_task-gnome-cups = " \
-  cups \
+  cups cups-gs gs \
   cups-backend-hal \
-#  cups-gs \
   gnome-cups-manager \
   gtk-printbackend-cups \
-#  gutenprint \
   hal-cups-utils \
+  hplip hplip-ppd hplip-cups hplip-backend hplip-filter\
  "
 
 RDEPENDS_task-gnome-pulseaudio = " \
+  pulseaudio pulseaudio-misc pulseaudio-server\
   pulseaudio-alsa-wrapper \
   pulseaudio-esd-wrapper \
-  pulseaudio-module-gconf \
+  pulseaudio-gconf-helper \
+  pulseaudio-module-cli \
+  pulseaudio-module-cli-protocol-unix \
+  pulseaudio-module-esound-protocol-unix \
+  pulseaudio-module-oss \
+  pulseaudio-module-simple-protocol-tcp \
+  pulseaudio-module-volume-restore \
+  pulseaudio-module-zeroconf-discover \
+  pulseaudio-module-zeroconf-publish \
   libasound-module-ctl-pulse \
   libasound-module-pcm-pulse \
  "
@@ -149,11 +173,22 @@ RDEPENDS_task-gnome-themes = " \
   angstrom-gnome-icon-theme-enable \
   gnome-icon-theme \
   gnome-themes \
+  gnome-theme-crux \
+  gnome-theme-highcontrast \
+  gnome-theme-highcontrastinverse \
+  gnome-theme-highcontrastlargeprint \
+  gnome-theme-highcontrastlargeprintinverse \
+  gnome-theme-largeprint \
+  gnome-theme-mist \
   gtk-engine-clearlooks \
+  gtk-engine-crux-engine \
   gtk-engine-glide \
+  gtk-engine-hcengine \
   gtk-engine-thinice \
   gtk-engine-redmond95 \
   gtk-theme-clearlooks \
+  gtk-theme-crux \
+  gtk-theme-mist \
   gtk-theme-thinice \
   gtk-theme-redmond \
   hicolor-icon-theme \
@@ -203,7 +238,7 @@ RDEPENDS_${PN} = " \
   task-gnome \
   task-gnome-gstreamer \
   task-gnome-perl \
-  task-gnome-perl \
+  task-gnome-cups \
   task-gnome-pulseaudio \
   task-gnome-themes \
   task-gnome-totem \
