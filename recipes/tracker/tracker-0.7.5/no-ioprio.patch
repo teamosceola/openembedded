@@ -1,0 +1,57 @@
+--- tracker-0.6.95/configure.ac-orig	2009-05-22 03:56:38.000000000 -0700
++++ tracker-0.6.95/configure.ac	2009-07-22 14:55:35.000000000 -0700
+@@ -1188,30 +1188,30 @@ AM_CONDITIONAL(HAVE_LIBVORBIS, test "x$h
+ AC_MSG_CHECKING([[ioprio support]])
+ have_ioprio=no
+ 
+-AC_RUN_IFELSE(
+-[AC_LANG_PROGRAM([[
+-	#include <stdlib.h>
+-	#include <errno.h>
+-	#include <sys/syscall.h>
+-	#include <unistd.h>
+-]], 
+-[[
+-        inline int ioprio_get (int which, int who) 
+-	{
+-	       return syscall (__NR_ioprio_get, which, who);
+-	}
+-
+-	int main ()
+-	{
+-	       return ioprio_get (1, 0);
+-	}
+-]]
+-)],
+-[have_ioprio=yes],[])
+-
+-if test "$have_ioprio" = "yes" ; then
+-   AC_DEFINE(HAVE_IOPRIO, 1, [Define if we have ioprio])
+-fi
++#AC_RUN_IFELSE(
++#[AC_LANG_PROGRAM([[
++#	#include <stdlib.h>
++#	#include <errno.h>
++#	#include <sys/syscall.h>
++#	#include <unistd.h>
++#]], 
++#[[
++#        inline int ioprio_get (int which, int who) 
++#	{
++#	       return syscall (__NR_ioprio_get, which, who);
++#	}
++#
++#	int main ()
++#	{
++#	       return ioprio_get (1, 0);
++#	}
++#]]
++#)],
++#[have_ioprio=yes],[])
++#
++#if test "$have_ioprio" = "yes" ; then
++#   AC_DEFINE(HAVE_IOPRIO, 1, [Define if we have ioprio])
++#fi
+ 
+ AC_MSG_RESULT([$have_ioprio])
+ 
