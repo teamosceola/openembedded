@@ -54,7 +54,7 @@ iface lo inet loopback
 #	netmask 255.255.255.0
 #	network 192.168.0.0
 #	gateway 192.168.0.200
-#
+
 # Bluetooth networking
 #iface bnep0 inet dhcp
 
