@@ -216,6 +216,16 @@ state.overo {
 		comment.access 'read write'
 		comment.type ENUMERATED
 		comment.count 1
+		comment.item.0 'Voice high priority'
+		comment.item.1 'HiFi high priority'
+		iface MIXER
+		name 'AVADC Clock Priority'
+		value 'Voice high priority'
+	}
+	control.21 {
+		comment.access 'read write'
+		comment.type ENUMERATED
+		comment.count 1
 		comment.item.0 '27/20/14 ms'
 		comment.item.1 '55/40/27 ms'
 		comment.item.2 '109/81/55 ms'
@@ -228,7 +238,7 @@ state.overo {
 		name 'HS ramp delay'
 		value '27/20/14 ms'
 	}
-	control.21 {
+	control.22 {
 		comment.access 'read write'
 		comment.type ENUMERATED
 		comment.count 1
@@ -238,7 +248,7 @@ state.overo {
 		name 'Vibra H-bridge mode'
 		value 'Vibra H-bridge direction'
 	}
-	control.22 {
+	control.23 {
 		comment.access 'read write'
 		comment.type ENUMERATED
 		comment.count 1
@@ -248,28 +258,22 @@ state.overo {
 		name 'Vibra H-bridge direction'
 		value 'Positive polarity'
 	}
-	control.23 {
-		comment.access 'read write'
-		comment.type BOOLEAN
-		comment.count 1
-		iface MIXER
-		name 'Analog Right Capture Route Sub mic'
-		value false
-	}
 	control.24 {
 		comment.access 'read write'
-		comment.type BOOLEAN
+		comment.type ENUMERATED
 		comment.count 1
+		comment.item.0 'Not swapped'
+		comment.item.1 Swapped
 		iface MIXER
-		name 'Analog Right Capture Route AUXR'
-		value true
+		name 'Digimic LR Swap'
+		value 'Not swapped'
 	}
 	control.25 {
 		comment.access 'read write'
 		comment.type BOOLEAN
 		comment.count 1
 		iface MIXER
-		name 'Analog Left Capture Route Main mic'
+		name 'Analog Right Sub Mic Capture Switch'
 		value false
 	}
 	control.26 {
@@ -277,26 +281,42 @@ state.overo {
 		comment.type BOOLEAN
 		comment.count 1
 		iface MIXER
-		name 'Analog Left Capture Route Headset mic'
-		value false
+		name 'Analog Right AUXR Capture Switch'
+		value true
 	}
 	control.27 {
 		comment.access 'read write'
 		comment.type BOOLEAN
 		comment.count 1
 		iface MIXER
-		name 'Analog Left Capture Route AUXL'
-		value true
+		name 'Analog Left Main Mic Capture Switch'
+		value false
 	}
 	control.28 {
 		comment.access 'read write'
 		comment.type BOOLEAN
 		comment.count 1
 		iface MIXER
-		name 'Analog Left Capture Route Carkit mic'
+		name 'Analog Left Headset Mic Capture Switch'
 		value false
 	}
 	control.29 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 1
+		iface MIXER
+		name 'Analog Left AUXL Capture Switch'
+		value true
+	}
+	control.30 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 1
+		iface MIXER
+		name 'Analog Left Carkit Mic Capture Switch'
+		value false
+	}
+	control.31 {
 		comment.access 'read write'
 		comment.type ENUMERATED
 		comment.count 1
@@ -306,7 +326,7 @@ state.overo {
 		name 'TX2 Capture Route'
 		value Analog
 	}
-	control.30 {
+	control.32 {
 		comment.access 'read write'
 		comment.type ENUMERATED
 		comment.count 1
@@ -316,7 +336,7 @@ state.overo {
 		name 'TX1 Capture Route'
 		value Analog
 	}
-	control.31 {
+	control.33 {
 		comment.access 'read write'
 		comment.type ENUMERATED
 		comment.count 1
@@ -326,7 +346,7 @@ state.overo {
 		name 'Vibra Route'
 		value 'Local vibrator'
 	}
-	control.32 {
+	control.34 {
 		comment.access 'read write'
 		comment.type ENUMERATED
 		comment.count 1
@@ -338,15 +358,15 @@ state.overo {
 		name 'Vibra Mux'
 		value AudioL1
 	}
-	control.33 {
+	control.35 {
 		comment.access 'read write'
 		comment.type BOOLEAN
 		comment.count 1
 		iface MIXER
-		name 'HandsfreeR Switch Switch'
+		name 'HandsfreeR Switch'
 		value false
 	}
-	control.34 {
+	control.36 {
 		comment.access 'read write'
 		comment.type ENUMERATED
 		comment.count 1
@@ -358,15 +378,15 @@ state.overo {
 		name 'HandsfreeR Mux'
 		value Voice
 	}
-	control.35 {
+	control.37 {
 		comment.access 'read write'
 		comment.type BOOLEAN
 		comment.count 1
 		iface MIXER
-		name 'HandsfreeL Switch Switch'
+		name 'HandsfreeL Switch'
 		value false
 	}
-	control.36 {
+	control.38 {
 		comment.access 'read write'
 		comment.type ENUMERATED
 		comment.count 1
@@ -378,7 +398,7 @@ state.overo {
 		name 'HandsfreeL Mux'
 		value Voice
 	}
-	control.37 {
+	control.39 {
 		comment.access 'read write'
 		comment.type BOOLEAN
 		comment.count 1
@@ -386,7 +406,7 @@ state.overo {
 		name 'CarkitR Mixer Voice'
 		value false
 	}
-	control.38 {
+	control.40 {
 		comment.access 'read write'
 		comment.type BOOLEAN
 		comment.count 1
@@ -394,7 +414,7 @@ state.overo {
 		name 'CarkitR Mixer AudioR1'
 		value false
 	}
-	control.39 {
+	control.41 {
 		comment.access 'read write'
 		comment.type BOOLEAN
 		comment.count 1
@@ -402,7 +422,7 @@ state.overo {
 		name 'CarkitR Mixer AudioR2'
 		value false
 	}
-	control.40 {
+	control.42 {
 		comment.access 'read write'
 		comment.type BOOLEAN
 		comment.count 1
@@ -410,7 +430,7 @@ state.overo {
 		name 'CarkitL Mixer Voice'
 		value false
 	}
-	control.41 {
+	control.43 {
 		comment.access 'read write'
 		comment.type BOOLEAN
 		comment.count 1
@@ -418,7 +438,7 @@ state.overo {
 		name 'CarkitL Mixer AudioL1'
 		value false
 	}
-	control.42 {
+	control.44 {
 		comment.access 'read write'
 		comment.type BOOLEAN
 		comment.count 1
@@ -426,7 +446,7 @@ state.overo {
 		name 'CarkitL Mixer AudioL2'
 		value false
 	}
-	control.43 {
+	control.45 {
 		comment.access 'read write'
 		comment.type BOOLEAN
 		comment.count 1
@@ -434,7 +454,7 @@ state.overo {
 		name 'HeadsetR Mixer Voice'
 		value false
 	}
-	control.44 {
+	control.46 {
 		comment.access 'read write'
 		comment.type BOOLEAN
 		comment.count 1
@@ -442,7 +462,7 @@ state.overo {
 		name 'HeadsetR Mixer AudioR1'
 		value false
 	}
-	control.45 {
+	control.47 {
 		comment.access 'read write'
 		comment.type BOOLEAN
 		comment.count 1
@@ -450,7 +470,7 @@ state.overo {
 		name 'HeadsetR Mixer AudioR2'
 		value true
 	}
-	control.46 {
+	control.48 {
 		comment.access 'read write'
 		comment.type BOOLEAN
 		comment.count 1
@@ -458,7 +478,7 @@ state.overo {
 		name 'HeadsetL Mixer Voice'
 		value false
 	}
-	control.47 {
+	control.49 {
 		comment.access 'read write'
 		comment.type BOOLEAN
 		comment.count 1
@@ -466,7 +486,7 @@ state.overo {
 		name 'HeadsetL Mixer AudioL1'
 		value false
 	}
-	control.48 {
+	control.50 {
 		comment.access 'read write'
 		comment.type BOOLEAN
 		comment.count 1
@@ -474,7 +494,7 @@ state.overo {
 		name 'HeadsetL Mixer AudioL2'
 		value true
 	}
-	control.49 {
+	control.51 {
 		comment.access 'read write'
 		comment.type BOOLEAN
 		comment.count 1
@@ -482,7 +502,7 @@ state.overo {
 		name 'PredriveR Mixer Voice'
 		value false
 	}
-	control.50 {
+	control.52 {
 		comment.access 'read write'
 		comment.type BOOLEAN
 		comment.count 1
@@ -490,7 +510,7 @@ state.overo {
 		name 'PredriveR Mixer AudioR1'
 		value false
 	}
-	control.51 {
+	control.53 {
 		comment.access 'read write'
 		comment.type BOOLEAN
 		comment.count 1
@@ -498,7 +518,7 @@ state.overo {
 		name 'PredriveR Mixer AudioR2'
 		value false
 	}
-	control.52 {
+	control.54 {
 		comment.access 'read write'
 		comment.type BOOLEAN
 		comment.count 1
@@ -506,7 +526,7 @@ state.overo {
 		name 'PredriveR Mixer AudioL2'
 		value false
 	}
-	control.53 {
+	control.55 {
 		comment.access 'read write'
 		comment.type BOOLEAN
 		comment.count 1
@@ -514,7 +534,7 @@ state.overo {
 		name 'PredriveL Mixer Voice'
 		value false
 	}
-	control.54 {
+	control.56 {
 		comment.access 'read write'
 		comment.type BOOLEAN
 		comment.count 1
@@ -522,7 +542,7 @@ state.overo {
 		name 'PredriveL Mixer AudioL1'
 		value false
 	}
-	control.55 {
+	control.57 {
 		comment.access 'read write'
 		comment.type BOOLEAN
 		comment.count 1
@@ -530,7 +550,7 @@ state.overo {
 		name 'PredriveL Mixer AudioL2'
 		value false
 	}
-	control.56 {
+	control.58 {
 		comment.access 'read write'
 		comment.type BOOLEAN
 		comment.count 1
@@ -538,7 +558,7 @@ state.overo {
 		name 'PredriveL Mixer AudioR2'
 		value false
 	}
-	control.57 {
+	control.59 {
 		comment.access 'read write'
 		comment.type BOOLEAN
 		comment.count 1
@@ -546,7 +566,7 @@ state.overo {
 		name 'Earpiece Mixer Voice'
 		value false
 	}
-	control.58 {
+	control.60 {
 		comment.access 'read write'
 		comment.type BOOLEAN
 		comment.count 1
@@ -554,7 +574,7 @@ state.overo {
 		name 'Earpiece Mixer AudioL1'
 		value false
 	}
-	control.59 {
+	control.61 {
 		comment.access 'read write'
 		comment.type BOOLEAN
 		comment.count 1
@@ -562,7 +582,7 @@ state.overo {
 		name 'Earpiece Mixer AudioL2'
 		value false
 	}
-	control.60 {
+	control.62 {
 		comment.access 'read write'
 		comment.type BOOLEAN
 		comment.count 1
@@ -570,7 +590,7 @@ state.overo {
 		name 'Earpiece Mixer AudioR1'
 		value false
 	}
-	control.61 {
+	control.63 {
 		comment.access 'read write'
 		comment.type INTEGER
 		comment.count 1
@@ -581,7 +601,7 @@ state.overo {
 		name 'Voice Digital Loopback Volume'
 		value 0
 	}
-	control.62 {
+	control.64 {
 		comment.access 'read write'
 		comment.type INTEGER
 		comment.count 1
@@ -592,7 +612,7 @@ state.overo {
 		name 'Right Digital Loopback Volume'
 		value 0
 	}
-	control.63 {
+	control.65 {
 		comment.access 'read write'
 		comment.type INTEGER
 		comment.count 1
@@ -603,7 +623,7 @@ state.overo {
 		name 'Left Digital Loopback Volume'
 		value 0
 	}
-	control.64 {
+	control.66 {
 		comment.access 'read write'
 		comment.type BOOLEAN
 		comment.count 1
@@ -611,7 +631,7 @@ state.overo {
 		name 'Voice Analog Loopback Switch'
 		value false
 	}
-	control.65 {
+	control.67 {
 		comment.access 'read write'
 		comment.type BOOLEAN
 		comment.count 1
@@ -619,7 +639,7 @@ state.overo {
 		name 'Left2 Analog Loopback Switch'
 		value false
 	}
-	control.66 {
+	control.68 {
 		comment.access 'read write'
 		comment.type BOOLEAN
 		comment.count 1
@@ -627,7 +647,7 @@ state.overo {
 		name 'Right2 Analog Loopback Switch'
 		value false
 	}
-	control.67 {
+	control.69 {
 		comment.access 'read write'
 		comment.type BOOLEAN
 		comment.count 1
@@ -635,7 +655,7 @@ state.overo {
 		name 'Left1 Analog Loopback Switch'
 		value false
 	}
-	control.68 {
+	control.70 {
 		comment.access 'read write'
 		comment.type BOOLEAN
 		comment.count 1
