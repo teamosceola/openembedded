@@ -52,7 +52,6 @@ case `machine_id` in
       ;;                                               
 esac
 
-device=0x50
 vendorid=$1
 if [ ${#vendorid} -ge 6 ]; then
     echo "Error: vendorid number must be less than 6 digits"
