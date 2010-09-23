@@ -19,6 +19,7 @@ SRC_URI = "svn://svn.mplayerhq.hu/mplayer;module=trunk \
        file://demux_mkv-V_VP8__webm_doctype.diff;striplevel=0 \
        file://configure-libvpx_test.diff \
        file://vofw-swscale.diff \
+       file://silence.patch \
 "
 
 SRCREV = "30165"
