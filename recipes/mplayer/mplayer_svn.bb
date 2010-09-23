@@ -21,6 +21,7 @@ SRC_URI = "svn://svn.mplayerhq.hu/mplayer;module=trunk \
        file://vofw-swscale.diff \
        file://offset.patch;minrev=32735 \
        file://0001-MPlayer-FFmpeg-VP8-encode-decode-patches-using-libvp.patch;minrev=32735 \
+       file://silence.patch \
 "
 
 SRCREV = "32735"
