@@ -170,7 +170,7 @@ EXTRA_OECONF = " \
 	--enable-ossaudio \
 	--disable-arts \
 	--disable-esd \
-	--disable-pulse \
+	--enable-pulse \
 	--disable-jack \
 	--disable-openal \
 	--disable-nas \
