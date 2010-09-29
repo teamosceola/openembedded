@@ -11,7 +11,7 @@ SRC_URI[sha256sum] = "d25ffa35add3abeeec0eba60be2cffc89425b649c64ef3a73dfc724683
 
 PR = "r2"
 
-DEFAULT_PREFERENCE = "-1"
+#DEFAULT_PREFERENCE = "-1"
 DEPENDS += "virtual/libusb0"
 EXTRA_OECONF += " --disable-gssapi --disable-largefile --enable-debug --disable-relro --enable-libusb"
 CONFFILES_${PN} += "${sysconfdir}/cups/cupsd.conf"
