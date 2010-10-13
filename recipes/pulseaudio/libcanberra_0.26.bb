@@ -1,7 +1,7 @@
 DESCRIPTION = "Libcanberra is an implementation of the XDG Sound Theme and Name \
 Specifications, for generating event sounds on free desktops."
 LICENSE = "LGPL"
-DEPENDS = "alsa-lib gstreamer gtk+ libtool libvorbis gconf"
+DEPENDS = "pulseaudio alsa-lib gstreamer gtk+ libtool libvorbis  gconf"
 SECTION = "libs/multimedia"
 AUTHOR = "Lennart Poettering"
 HOMEPAGE = "http://0pointer.de/lennart/projects/libcanberra"
@@ -22,8 +22,7 @@ EXTRA_OECONF = "\
   --enable-multi \
   --enable-null \
   --disable-oss \
-# enable pulse again when pulseaudio >= 0.9.11 is the default in OE
-  --disable-pulse \
+  --enable-pulse \
   --disable-tdb \
 "
 
