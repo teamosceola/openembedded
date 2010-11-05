@@ -1,0 +1,18 @@
+#
+# Environment setup for oe
+#
+
+export BB_ENV_EXTRAWHITE="MACHINE DISTRO ANGSTROM_MODE OETOP OEBRANCH USERBRANCH TITOOLSDIR"
+
+export OETOP=`pwd`
+export OEBRANCH="${OETOP}/openembedded"
+export USERBRANCH="${OETOP}/user.collection"
+
+export PATH="${OETOP}/bitbake/bin:$PATH"
+export BBPATH="${OETOP}/build:${USERBRANCH}:${OEBRANCH}"
+
+umask 0002
+
+#
+# end oe setup
+#
