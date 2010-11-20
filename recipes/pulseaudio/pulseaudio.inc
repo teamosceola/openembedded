@@ -6,7 +6,7 @@ LICENSE = "LGPL"
 DEPENDS = "bluez4 libatomics-ops liboil avahi libsamplerate0 libsndfile1 libtool hal virtual/libx11 tcp-wrappers"
 # optional
 DEPENDS += "alsa-lib glib-2.0 dbus consolekit hal openssl"
-INC_PR = "r11"
+INC_PR = "r14"
 
 SRC_URI = "http://0pointer.de/lennart/projects/pulseaudio/pulseaudio-${PV}.tar.gz \
            file://gcc4-compile-fix.patch \
@@ -24,6 +24,7 @@ EXTRA_OECONF = "\
 		--with-alsa \
 		--with-oss \
 		--with-hal \
+		--with-udev \
 "
 
 PARALLEL_MAKE = ""
@@ -42,6 +43,9 @@ do_install_append() {
 	if [ "x${TARGET_PFPU}" = "xsoft" ] ; then 
 	     sed -i -e s:\;\ resample-method\ =\ sinc-fastest:resample-method\ =\ trivial: ${D}${sysconfdir}/pulse/daemon.conf
 	fi
+
+	rm ${D}${sysconfdir}/xdg/autostart/pulseaudio-kde.desktop
+	sed -i -e 's:/usr/bin/pulseaudio:#/usr/bin/pulseaudio:g' ${D}${bindir}/start-pulseaudio-x11
 }
 
 PACKAGES =+ "libpulsecore libpulsecommon libpulsedsp libpulse libpulse-simple libpulse-browse libpulse-mainloop-glib \
@@ -105,23 +109,32 @@ python populate_packages_prepend() {
 }
 
 RDEPENDS_pulseaudio-module-console-kit =+ "consolekit"
-RDEPENDS_pulseaudio-module-hal_detect =+ "hal"
+RDEPENDS_pulseaudio-module-hal-detect =+ "hal"
+RDEPENDS_pulseaudio-module-udev-detect =+ "udev"
 RDEPENDS_pulseaudio-server = " \
-    pulseaudio-module-device-restore \
-    pulseaudio-module-stream-restore \
-    pulseaudio-module-card-restore \
-    pulseaudio-module-augment-properties \
-    pulseaudio-module-detect \
+    pulseaudio-module-alsa-card \
     pulseaudio-module-alsa-sink \
     pulseaudio-module-alsa-source \
-    pulseaudio-module-alsa-card \
-    pulseaudio-module-native-protocol-unix \
-    pulseaudio-module-hal-detect \
-    pulseaudio-module-default-device-restore \
-    pulseaudio-module-rescue-streams \
     pulseaudio-module-always-sink \
-    pulseaudio-module-suspend-on-idle \
+    pulseaudio-module-augment-properties \
+    pulseaudio-module-card-restore \
     pulseaudio-module-console-kit \
+    pulseaudio-module-cork-music-on-phone \
+    pulseaudio-module-default-device-restore \
+    pulseaudio-module-detect \
+    pulseaudio-module-device-restore \
+    pulseaudio-module-gconf \
+    pulseaudio-module-hal-detect \
+    pulseaudio-module-intended-roles \
+    pulseaudio-module-native-protocol-unix \
+    pulseaudio-module-null-sink \
     pulseaudio-module-position-event-sounds \
-    pulseaudio-module-cork-music-on-phone "
+    pulseaudio-module-rescue-streams \
+    pulseaudio-module-stream-restore \
+    pulseaudio-module-suspend-on-idle \
+    pulseaudio-module-udev-detect \
+    pulseaudio-module-x11-cork-request \
+    pulseaudio-module-x11-publish \
+    pulseaudio-module-x11-xsmp \
+   "
 
