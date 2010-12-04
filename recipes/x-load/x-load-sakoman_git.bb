@@ -4,7 +4,7 @@ FILESDIR = "${@os.path.dirname(bb.data.getVar('FILE',d,1))}/x-load-sakoman-git/$
 
 PV = "1.44ss+${PR}+gitr${SRCREV}"
 
-SRCREV = ${AUTOREV}
+SRCREV = "16d9259cc980c7f3a3778431349dcbbf97a7ec82"
 SRC_URI = "git://www.sakoman.com/git/x-loader.git;branch=master;protocol=git"
 
 SRCREV_omap4430-sdp = ${AUTOREV}
