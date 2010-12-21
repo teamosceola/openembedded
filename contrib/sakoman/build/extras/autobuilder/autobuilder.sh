@@ -168,7 +168,7 @@ then
     ln -s $ARCHIVE/$machine/$REVISION/sakoman-console-image-$machine-$REVISION.tar.bz2 $ARCHIVE/$machine/current/sakoman-console-image.tar.bz2
     ln -s $ARCHIVE/$machine/$REVISION/sakoman-gnome-image-$machine-$REVISION.tar.bz2 $ARCHIVE/$machine/current/sakoman-gnome-image.tar.bz2
     ln -s $ARCHIVE/$machine/$REVISION/modules-$machine-$REVISION.tgz $ARCHIVE/$machine/current/modules.tgz
-    ln -s $ARCHIVE/$machine/$REVISION/mksdcard.sh $ARCHIVE/$machine/current/mkcard.sh
+    ln -s $ARCHIVE/$machine/$REVISION/mksdcard.sh $ARCHIVE/$machine/current/mksdcard.sh
 
   done
 
