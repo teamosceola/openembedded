@@ -33,6 +33,7 @@ TOOLS_INSTALL = " \
   bash \
   bzip2 \
   ckermit \
+  cpufrequtils \
   devmem2 \
   dhcp-client \
   dosfstools \
