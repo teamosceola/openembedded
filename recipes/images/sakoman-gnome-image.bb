@@ -15,6 +15,7 @@ IMAGE_INSTALL += " \
   ${ANGSTROM_EXTRA_INSTALL} \
   ${IMAGE_SPLASH} \
   angstrom-task-gnome \
+  nfs-utils nfs-utils-client \
   task-gnome-apps \
   task-gnome-sdk \
   ti-msp430-chronos-apps \
