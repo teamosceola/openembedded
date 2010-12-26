@@ -4,7 +4,7 @@ SECTION = "libs"
 PRIORITY = "optional"
 LICENSE = "GPLv2/LGPLv2.1"
 DEPENDS = "gst-plugins-base alsa-lib virtual/libusb0 dbus-glib"
-INC_PR = "r8"
+INC_PR = "r9"
 
 # temporary solution until bug 5176 is properly fixed
 PROVIDES += "bluez-utils bluez-libs bluez-utils-dbus"
@@ -16,6 +16,17 @@ SRC_URI = "\
   file://fix-dfutool-usb-declaration-mismatch.patch \
   file://bluetooth.conf \
 "
+
+SRC_URI_append_overo = "\
+  file://bluetooth.default \
+  file://bluetooth.init \
+"
+
+SRC_URI_append_omap3-multi = "\
+  file://bluetooth.default \
+  file://bluetooth.init \
+"
+
 S = "${WORKDIR}/bluez-${PV}"
 
 inherit autotools
@@ -47,6 +58,23 @@ do_install_append() {
         # at_console doesn't really work with the current state of OE, so punch some more holes so people can actually use BT
         install -m 0644 ${WORKDIR}/bluetooth.conf ${D}/${sysconfdir}/dbus-1/system.d/
 }
+
+do_install_append_overo() {
+	install -d ${D}${sysconfdir}/default/
+	install -m 0644 ${WORKDIR}/bluetooth.default ${D}${sysconfdir}/default/bluetooth
+	install -d ${D}${sysconfdir}/init.d/
+	install -m 0755 ${WORKDIR}/bluetooth.init    ${D}${sysconfdir}/init.d/bluetooth
+}
+
+do_install_append_omap3-multi() {
+	install -d ${D}${sysconfdir}/default/
+	install -m 0644 ${WORKDIR}/bluetooth.default ${D}${sysconfdir}/default/bluetooth
+	install -d ${D}${sysconfdir}/init.d/
+	install -m 0755 ${WORKDIR}/bluetooth.init    ${D}${sysconfdir}/init.d/bluetooth
+}
+
+INITSCRIPT_NAME = "bluetooth"
+INITSCRIPT_PARAMS = "defaults 23 19"
 
 PACKAGES =+ "gst-plugin-bluez libasound-module-bluez"
 
