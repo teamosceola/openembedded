@@ -45,6 +45,7 @@ TOOLS_INSTALL = " \
   i2c-tools \
   iftop \
   ksymoops \
+  linux-input \
   lsof \
   memtester \
   mkfs-jffs2 \
