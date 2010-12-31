@@ -52,6 +52,7 @@ RDEPENDS_task-gnome-sdk = " \
   libltdl \
   libtool libtool-dev \
   pkgconfig \
+  subversion \
   task-native-sdk \
  "
 
