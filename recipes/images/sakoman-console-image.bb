@@ -4,8 +4,8 @@ inherit image
 
 DEPENDS = "task-base"
 
-RRECOMMENDS_${PN}_append_armv7a = " \
-#  libgles-omap3 \
+RRECOMMENDS_${PN}_append_omap3-multi = " \
+  libgles-omap3 \
   omap3-writeprom \
  "
 

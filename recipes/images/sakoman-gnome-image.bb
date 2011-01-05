@@ -22,3 +22,7 @@ IMAGE_INSTALL += " \
   avrdude \
  "
 
+IMAGE_INSTALL_append_omap3-multi += " \
+  libgles-omap3-x11demos \
+  libgles-omap3-x11trainingcourses \
+  "
