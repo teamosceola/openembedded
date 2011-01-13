@@ -12,7 +12,7 @@ XSERVER ?= "xserver-xorg \
            xf86-input-keyboard \
 "
 
-PR = "r14"
+PR = "r15"
 
 PACKAGES += "task-gnome-apps task-gnome-sdk task-gnome-fonts task-gnome task-gnome-gstreamer task-gnome-perl task-gnome-cups task-gnome-pulseaudio task-gnome-themes task-gnome-totem task-gnome-xserver-base task-gnome-xserver"
 
@@ -53,6 +53,7 @@ RDEPENDS_task-gnome-sdk = " \
   libtool libtool-dev \
   pkgconfig \
   subversion \
+  texinfo \
   task-native-sdk \
  "
 
