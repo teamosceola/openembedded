@@ -3,14 +3,14 @@ require linux.inc
 DESCRIPTION = "Linux kernel for OMAP processors"
 KERNEL_IMAGETYPE = "uImage"
 
-COMPATIBLE_MACHINE = "beagleboard|omap3-multi|overo|omap4-multi|omap4430-panda|omap4430-sdp"
+COMPATIBLE_MACHINE = "beagleboard|omap3-multi|overo|omap4-multi|omap4430-panda|omap4430-sdp|rockhopper"
 
 BOOT_SPLASH ?= "logo_linux_clut224-generic.ppm"
 PV = "2.6.36"
 
 S = "${WORKDIR}/git"
 
-SRCREV = "a19f32a5d99300309fa712be35f426e99dc4d854"
+SRCREV = "381b62d716a8568d4210c5aa80d3dc0b5e0cdd6b"
 SRC_URI = "git://www.sakoman.com/git/linux-omap-2.6.git;branch=omap-2.6.36;protocol=git \
 	   file://defconfig \
            file://${BOOT_SPLASH} \
