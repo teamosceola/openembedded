@@ -2,13 +2,13 @@
 # fdisk portion of script based on mkcard.sh v0.4
 # (c) Copyright 2009 Graeme Gregory <dp@xora.org.uk>
 # Additional functionality by Steve Sakoman
-# (c) Copyright 2010 Steve Sakoman <steve@sakoman.com>
+# (c) Copyright 2010-2011 Steve Sakoman <steve@sakoman.com>
 # Licensed under terms of GPLv2
 #
 # Parts of the procudure base on the work of Denys Dmytriyenko
 # http://wiki.omap.com/index.php/MMC_Boot_Format
 
-VERSION=0.5
+VERSION=0.6
 RELEASE="gnome-r12"
 
 export LC_ALL=C
@@ -27,7 +27,6 @@ if [ $# -eq 0 ]; then
 	echo "   machine: target machine (default overo)"
 	echo "            beagleboard"
 	echo "            omap4430-panda"
-	echo "            omap4430-sdp"
 	echo "            overo"
 	echo "   image: image name (default gnome)"
 	echo "            console"
@@ -75,9 +74,9 @@ case $MACHINE in
 		ARCH="omap3-multi" ;;
 	overo )
 		ARCH="omap3-multi" ;;
+	rockhopper )
+		ARCH="omap3-multi" ;;
 	omap4430-panda )
-		ARCH="omap4-multi" ;;
-	omap4430-sdp )
 		ARCH="omap4-multi" ;;
 	* )
 		echo "Error: unkown machine: $MACHINE"
