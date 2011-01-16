@@ -30,8 +30,8 @@ BUILD_LIBC=" \
 MACHINES_MACH=" \
                 overo \
                 beagleboard \
+                rockhopper \
                 omap4430-panda \
-                omap4430-sdp \
                "
 # read list of machine dependent targets
 BUILD_TARGETS_MACH=`cat $OETOP/build/extras/autobuilder/targets-mach`
