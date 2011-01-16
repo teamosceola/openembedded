@@ -9,7 +9,7 @@ DEPENDS += "virtual/libsdl schroedinger libgsm libvpx"
 SRCREV = "25825"
 
 PV = "0.6+${PR}+svnr${SRCPV}"
-PR = "${INC_PR}.3"
+PR = "${INC_PR}.4"
 
 DEFAULT_PREFERENCE = "-1"
 DEFAULT_PREFERENCE_angstrom = "1"
@@ -59,6 +59,8 @@ do_configure() {
         mkdir -p ${B}
         cd ${B}
         ${S}/configure ${EXTRA_OECONF}
-		sed -i -e s:Os:O4:g ${B}/config.h
+        sed -i -e s:Os:O4:g ${B}/config.h
+        # Don't use hardfp args when using softfp
+        sed -i -e 's:if HAVE_VFP_ARGS:ifdef __ARM_PCS_VFP:' ${S}/libavcodec/arm/asm.S
 }
 
