@@ -1,5 +1,5 @@
 # untested and huge change from 1.4.x
-DEFAULT_PREFERENCE = "-1"
+#DEFAULT_PREFERENCE = "-1"
 
 BINLOCATION = "${S}/gfx_rel_es3.x"
 

@@ -231,6 +231,9 @@ FILES_${PN}-dbg = "${libdir}/.debug/* ${bindir}/.debug/* \
                    ${libdir}/ES*/.debug ${bindir}/*/.debug\
                    ${bindir}/SGX/demos/*/.debug/* \
                    ${bindir}/SGX/trainingcourses/*/.debug/* \
+                   ${incdir}/services4/*/env/linux/*/.debug/* \
+                   ${includedir}/services4/*/env/linux/*/*/.debug/* \
+                   ${includedir}/services4/*/env/linux/*/*/.debug/* \
 	"
 
 FILES_${PN}-rawdemos = "${bindir}/SGX/demos/Raw/*"
@@ -249,10 +252,12 @@ RDEPENDS_${PN} += "fbset devmem2"
 
 #HACK! These are binaries, so we can't guarantee that LDFLAGS match :(
 INSANE_SKIP_${PN} = True
+INSANE_SKIP_${PN}-dev = True
 INSANE_SKIP_${PN}-blitwsegl = True
 INSANE_SKIP_${PN}-flipwsegl = True
 INSANE_SKIP_${PN}-frontwsegl = True
 INSANE_SKIP_${PN}-linuxfbwsegl = True
+INSANE_SKIP_${PN}-rawtrainingcourses = True
 INSANE_SKIP_${PN}-x11wsegl = True
 INSANE_SKIP_${PN}-tests = True
 INSANE_SKIP_xserver-kdrive-powervrsgx = True
