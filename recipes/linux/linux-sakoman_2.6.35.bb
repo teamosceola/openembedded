@@ -1,5 +1,3 @@
-CORTEXA8FIXUP = "no"
-
 require linux.inc
 
 DESCRIPTION = "Linux kernel for OMAP processors"
@@ -12,15 +10,28 @@ PV = "2.6.35"
 
 S = "${WORKDIR}/git"
 
-SRCREV_omap4430-panda = "6d019dae0034f66141cdeb355e2ffc71582f4131"
-SRC_URI_omap4430-panda = "git://www.sakoman.com/git/kernel-omap4.git;branch=L24.9;protocol=git \
+SRCREV = ${AUTOREV}
+SRC_URI = "git://www.sakoman.com/git/linux-omap-2.6.git;branch=omap3-2.6.35;protocol=git \
 	   file://defconfig \
            file://${BOOT_SPLASH} \
            "
 
-SRCREV_omap4430-sdp = "6d019dae0034f66141cdeb355e2ffc71582f4131"
-SRC_URI_omap4430-sdp = "git://www.sakoman.com/git/kernel-omap4.git;branch=L24.9;protocol=git \
+SRCREV_omap4430-panda = ${AUTOREV}
+SRC_URI_omap4430-panda = "git://www.sakoman.com/git/ubuntu-maverick.git;branch=omap-2.6.35;protocol=git \
 	   file://defconfig \
            file://${BOOT_SPLASH} \
            "
+
+SRCREV_omap4430-sdp = ${AUTOREV}
+SRC_URI_omap4430-sdp = "git://www.sakoman.com/git/ubuntu-maverick.git;branch=omap-2.6.35;protocol=git \
+	   file://defconfig \
+           file://${BOOT_SPLASH} \
+           "
+
+SRCREV_omap4-multi = ${AUTOREV}
+SRC_URI_omap4-multi = "git://www.sakoman.com/git/ubuntu-maverick.git;branch=omap-2.6.35;protocol=git \
+	   file://defconfig \
+           file://${BOOT_SPLASH} \
+           "
+
 
