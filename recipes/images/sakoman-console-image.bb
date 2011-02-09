@@ -64,6 +64,7 @@ TOOLS_INSTALL = " \
   task-proper-tools \
   u-boot-sakoman-fw-utils \
   wget \
+  zip \
  "
 
 IMAGE_INSTALL += " \
