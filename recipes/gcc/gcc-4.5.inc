@@ -187,6 +187,7 @@ SRC_URI_append_mips64el = " file://mips64-nomultilib.patch "
 
 # Language Overrides
 FORTRAN = ""
+FORTRAN_linux-gnueabi = ",fortran"
 JAVA = ""
 
 S = "${WORKDIR}/${BRANCH}"
