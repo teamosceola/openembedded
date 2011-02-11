@@ -3,10 +3,10 @@ HOMEPAGE = "http://www.pulseaudio.org"
 AUTHOR = "Lennart Poettering"
 SECTION = "libs/multimedia"
 LICENSE = "LGPL"
-DEPENDS = "bluez4 libatomics-ops liboil avahi libsamplerate0 libsndfile1 libtool hal virtual/libx11 tcp-wrappers"
+DEPENDS = "bluez4 libatomics-ops liboil avahi libsamplerate0 libsndfile1 libtool hal virtual/libx11 libxtst tcp-wrappers"
 # optional
 DEPENDS += "alsa-lib glib-2.0 dbus consolekit hal openssl"
-INC_PR = "r14"
+INC_PR = "r15"
 
 SRC_URI = "http://0pointer.de/lennart/projects/pulseaudio/pulseaudio-${PV}.tar.gz \
            file://gcc4-compile-fix.patch \
