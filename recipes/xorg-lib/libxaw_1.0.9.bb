@@ -23,3 +23,4 @@ FILES_libxaw7 = "${libdir}/libXaw*.so.7*"
 FILES_libxaw8 = "${libdir}/libXaw8.so.8*"
 
 XORG_PN = "libXaw"
+ALLOW_EMPTY_${PN} = "1"
