@@ -1,7 +1,7 @@
 require sqlite3.inc
 PR = "${INC_PR}.0"
 
-DEFAULT_PREFERENCE = "-1"
+#DEFAULT_PREFERENCE = "-1"
 
 SRC_URI = "http://www.sqlite.org/sqlite-autoconf-3070500.tar.gz"
 
