@@ -6,7 +6,7 @@ DEPENDS_virtclass-native = "zlib-native ncurses-native lzo-native gettext-native
 
 inherit autotools gettext
 
-INC_PR = "r34"
+INC_PR = "r35"
 
 # allows for a release candidate
 RC ?= ""
@@ -180,6 +180,7 @@ do_install () {
 	ln -sf ${base_sbindir}/shutdown ${D}${base_sbindir}/halt.${PN}
 	ln -sf ${base_sbindir}/shutdown ${D}${base_sbindir}/fastboot
 	ln -sf ${base_sbindir}/shutdown ${D}${base_sbindir}/fasthalt
+	ln -sf ${base_sbindir}/shutdown ${D}${sbindir}/shutdown
 }
 
 python populate_packages_prepend () {
