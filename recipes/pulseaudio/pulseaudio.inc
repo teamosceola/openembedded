@@ -6,7 +6,7 @@ LICENSE = "LGPL"
 DEPENDS = "bluez4 libatomics-ops liboil avahi libsamplerate0 libsndfile1 libtool hal virtual/libx11 libxtst tcp-wrappers"
 # optional
 DEPENDS += "alsa-lib glib-2.0 dbus consolekit hal openssl"
-INC_PR = "r12"
+INC_PR = "r13"
 
 SRC_URI = "http://0pointer.de/lennart/projects/pulseaudio/pulseaudio-${PV}.tar.gz \
            file://gcc4-compile-fix.patch \
@@ -42,6 +42,9 @@ do_install_append() {
 	if [ "x${TARGET_PFPU}" = "xsoft" ] ; then 
 	     sed -i -e s:\;\ resample-method\ =\ sinc-fastest:resample-method\ =\ trivial: ${D}${sysconfdir}/pulse/daemon.conf
 	fi
+
+       rm ${D}${sysconfdir}/xdg/autostart/pulseaudio-kde.desktop
+       sed -i -e 's:/usr/bin/pulseaudio:#/usr/bin/pulseaudio:g' ${D}${bindir}/start-pulseaudio-x11
 }
 
 PACKAGES =+ "libpulsecore libpulsecommon libpulsedsp libpulse libpulse-simple libpulse-browse libpulse-mainloop-glib \
