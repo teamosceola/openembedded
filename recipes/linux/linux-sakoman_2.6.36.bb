@@ -10,7 +10,7 @@ PV = "2.6.36"
 
 S = "${WORKDIR}/git"
 
-SRCREV = "1ebf6b3c0f844df3f299da0c7a6b6b92c7a9379b"
+SRCREV = "6673cc25f781e61cb2d20e2a830047959d3f7801"
 SRC_URI = "git://www.sakoman.com/git/linux-omap-2.6.git;branch=omap-2.6.36;protocol=git \
 	   file://defconfig \
            file://${BOOT_SPLASH} \
