@@ -2,7 +2,7 @@ DESCRIPTION = "Firmware files for use with Linux kernel"
 
 PR = "r1"
 PR_append = "+gitr${SRCREV}"
-SRCREV = "c2e530abf58116fbc4eb3baedeb5b3ed092b2c8a"
+SRCREV = ${AUTOREV}
 
 SRC_URI = "git://git.kernel.org/pub/scm/linux/kernel/git/dwmw2/linux-firmware.git;protocol=git"
 
