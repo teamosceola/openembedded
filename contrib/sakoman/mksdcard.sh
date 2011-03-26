@@ -9,7 +9,7 @@
 # http://wiki.omap.com/index.php/MMC_Boot_Format
 
 VERSION=0.6
-RELEASE="gnome-r12"
+RELEASE="gnome-r13"
 
 export LC_ALL=C
 

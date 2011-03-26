@@ -1,6 +1,6 @@
 # NOTE: WIP! This recipe does not cross-compile atm., only -native
 SECTION = "libs"
-DEPENDS = "glib-2.0 libffi bison-native"
+DEPENDS = "glib-2.0 libffi bison-native python-native"
 BBCLASSEXTEND = "native"
 LICENSE = "LGPL"
 PR = "r1"
