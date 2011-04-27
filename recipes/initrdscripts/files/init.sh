@@ -5,7 +5,7 @@ BOOT_ROOT=
 ROOT_DEVICE=
 
 early_setup() {
-    mkdir -p /proc /sys /mnt /tmp
+    mkdir -p /proc /sys /mnt/ro /mnt/rw /mnt/union
 
     mount -t proc proc /proc
     mount -t sysfs sysfs /sys
