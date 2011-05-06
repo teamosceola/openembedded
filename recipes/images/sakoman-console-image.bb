@@ -55,6 +55,7 @@ TOOLS_INSTALL = " \
   openssh-misc \
   openssh-scp \
   openssh-ssh \
+  picodlp-control \
   procps \
   socat \
   strace \
