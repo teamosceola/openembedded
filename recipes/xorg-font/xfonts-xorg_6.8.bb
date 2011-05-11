@@ -6,7 +6,8 @@ LICENSE = "XFree86"
 PACKAGE_ARCH = "${BASE_PACKAGE_ARCH}"
 
 SRC_URI = "${FREEDESKTOP_CVS}/xorg;module=xc;tag=XORG-6_8_0;method=pserver \
-	file://lexer.patch"
+#	file://lexer.patch \
+        "
 
 
 PACKAGES = "${PN}-dbg ${PN}-75dpi ${PN}-100dpi ${PN}-type1 ${PN}-cyrillic ${PN}-ttf ${PN}"
