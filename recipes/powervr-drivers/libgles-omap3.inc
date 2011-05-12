@@ -258,6 +258,7 @@ INSANE_SKIP_${PN}-blitwsegl = True
 INSANE_SKIP_${PN}-flipwsegl = True
 INSANE_SKIP_${PN}-frontwsegl = True
 INSANE_SKIP_${PN}-linuxfbwsegl = True
+INSANE_SKIP_${PN}-rawtrainingcourses = True
 INSANE_SKIP_${PN}-x11wsegl = True
 INSANE_SKIP_${PN}-tests = True
 INSANE_SKIP_xserver-kdrive-powervrsgx = True
