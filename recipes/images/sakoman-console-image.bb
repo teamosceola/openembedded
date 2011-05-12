@@ -39,8 +39,10 @@ TOOLS_INSTALL = " \
   dosfstools \
   ethtool \
   fbgrab \
+  fbida \
   fbset \
   fbset-modes \
+  fbv \
   fuser \
   i2c-tools \
   iftop \
