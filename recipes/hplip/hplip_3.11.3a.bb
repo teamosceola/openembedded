@@ -1,7 +1,10 @@
 DESCRIPTION = "HP Linux Imaging and Printing"
 LICENSE = "GPL, MIT, BSD"
 
-DEPENDS = "cups net-snmp"
+DEPENDS = "python-pyqt cups net-snmp"
+RDEPENDS = "python-pyqt python-sip"
+
+PR = "r2"
 
 SRC_URI = "${SOURCEFORGE_MIRROR}/${PN}/${PN}-${PV}.tar.gz \
 	"
