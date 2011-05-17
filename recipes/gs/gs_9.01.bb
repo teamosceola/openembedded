@@ -1,9 +1,9 @@
 DESCRIPTION = "An interpreter of the Postscript language"
-LICENSE = "GPL"
+LICENSE = "GPLv2"
 SECTION = "console/utils"
 HOMEPAGE = "http://www.gnu.org/software/ghostscript/ghostscript.html"
-DEPENDS = "jpeg fontconfig cups"
-PR = "r0"
+DEPENDS = "jpeg zlib fontconfig cups gs-tools-native"
+PR = "r1"
 
 SRC_URI = "http://downloads.ghostscript.com/public/ghostscript-${PV}.tar.gz;name=tarball \
            file://unix-aux.mak \
@@ -22,47 +22,26 @@ TARGET_CC_ARCH += "${LDFLAGS}"
 
 PACKAGES += "cups-gs"
 
-do_configure_prepend() {
-        CC="${BUILD_CC}" LD="${BUILD_LD}" ./configure
-        mkdir obj
-        for i in genarch genconf mkromfs echogs gendev genht; do
-                make obj/$i
-        done
-        mv obj obj_host
-        make clean
-}
-
 do_configure() {
-	# hack script to allow for cross compiling
+	# hack script to allow for cross compiling jasper
 	sed 's,&& ./configure$,& --host=\$host --build=\$build --target=\$target,g' -i configure
- 
 	gnu-configize
-	oe_runconf
+	CFLAGS="${CFLAGS} -fPIC" oe_runconf
 }
 
 do_configure_append() {
-        if [ ! -d obj ]; then
-                mkdir obj
-        fi
-        if [ ! -d soobj ]; then
-                mkdir soobj
-        fi
+	# copy tools from the native gs build
+	mkdir -p obj soobj
         for i in genarch genconf mkromfs echogs gendev genht; do
-                cp obj_host/$i obj/$i
-                cp obj_host/$i soobj/$i
+                cp ${STAGING_BINDIR_NATIVE}/gs-tools-${PV}/$i obj/$i
+                cp ${STAGING_BINDIR_NATIVE}/gs-tools-${PV}/$i soobj/$i
         done
         # Prevent mkromfs from being recompiled for the target
         cp ${WORKDIR}/unix-aux.mak base/
 }
 
-do_stage () {
-	install -d ${STAGING_INCDIR}/ghostscript
-	install -m 755 ${S}/psi/*.h ${STAGING_INCDIR}/ghostscript/
-	oe_libinstall -so -C sobin libgs ${STAGING_LIBDIR}
-}
-
 do_compile_append () {
-        oe_runmake so
+        oe_runmake CFLAGS="${CFLAGS} -fPIC" so
 }
 
 do_install_prepend () {
@@ -79,6 +58,9 @@ do_install_append () {
 	# so duplicate it for compatibility
 	mkdir -p ${D}/${datadir}/cups/mime/
         cp ${D}/etc/cups/pstoraster.convs ${D}/${datadir}/cups/mime/
+
+	install -d ${D}${incluedir}/ghostscript
+	install -m 644 ${S}/psi/*.h ${D}${includedir}/ghostscript/
 }
 
 FILES_${PN} += "${datadir}/ghostscript "
