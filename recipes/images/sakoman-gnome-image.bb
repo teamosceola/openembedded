@@ -21,7 +21,7 @@ IMAGE_INSTALL += " \
   task-gnome-sdk \
   ti-msp430-chronos-apps \
   avrdude \
-  graphicsmagick \
+#  graphicsmagick \
  "
 
 IMAGE_INSTALL_append_omap3-multi += " \
