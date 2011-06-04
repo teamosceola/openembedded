@@ -65,6 +65,7 @@ TOOLS_INSTALL = " \
   syslog-ng \
   task-proper-tools \
   u-boot-sakoman-fw-utils \
+  watchdog \
   wget \
   zip \
  "
