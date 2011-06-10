@@ -26,7 +26,7 @@ RDEPENDS_task-gnome-apps = " \
   swfdec swfdec-gnome swfdec-mozilla \
   eog \
   evince  evince-nautilus-extension \
-#  firefox gecko-mediaplayer-firefox-hack \
+  firefox gecko-mediaplayer-firefox-hack \
   gcalctool \
   gedit gedit-plugins \
   gftp \
