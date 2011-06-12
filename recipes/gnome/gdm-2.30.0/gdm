@@ -31,6 +31,7 @@ DEFAULT_DISPLAY_MANAGER_FILE=/etc/X11/default-display-manager
 
 case "$1" in
   start)
+	# start hack
 	# make needed directories in volatile
 
 	if [ -e /var/log/gdm ] ; then 
@@ -46,6 +47,20 @@ case "$1" in
 
 	mkdir -m 01777 /tmp/.ICE-unix
 	chown root:root /tmp/.ICE-unix
+
+	if [ ! -d /var/cache/gdm/root ]; then
+		mkdir -p /var/cache/gdm/root
+	fi
+
+	if [ ! -d /var/log/cups ]; then
+		mkdir -p /var/log/cups
+	fi
+
+	if [ ! -x /usr/bin/htmlview ]; then
+		ln -s /usr/bin/epiphany /usr/bin/htmlview
+	fi
+
+	#end hack
 
         CONFIGURED_DAEMON=$(basename "$(cat $DEFAULT_DISPLAY_MANAGER_FILE 2> /dev/null)")
         if grep -wqs text /proc/cmdline; then

@@ -5,7 +5,7 @@ DEPENDS = "xinput gnome-panel tcp-wrappers libcanberra libxklavier grep consolek
 
 inherit gnome update-rc.d
 
-PR = "r1"
+PR = "r2"
 
 RDEPENDS_${PN} += "grep dbus-x11 shadow libpam-base-files"
 
