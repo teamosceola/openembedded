@@ -4,6 +4,7 @@ LICENSE = "GPLv3"
 SECTION = "base"
 RREPLACES_${PN} = "textutils shellutils fileutils"
 RPROVIDES_${PN} = "textutils shellutils fileutils"
+DEPENDS = "gmp"
 
-INC_PR = "r6"
+INC_PR = "r7"
 inherit autotools
