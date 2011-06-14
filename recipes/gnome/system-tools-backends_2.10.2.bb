@@ -1,8 +1,6 @@
 DESCRIPTION = "gnome system tools backends"
 LICENSE = "GPL"
 
-PR = "r1"
-
 DEPENDS = "dbus dbus-glib glib-2.0 policykit"
 
 # Shadow added so there is a full adduser/deluser
@@ -11,12 +9,11 @@ RDEPENDS_${PN} = "shadow"
 
 inherit gnome pkgconfig update-rc.d gettext
 
-SRC_URI[archive.md5sum] = "bde46137761df8849d6ee176449f84f5"
-SRC_URI[archive.sha256sum] = "0c1cfdf5f0550c0ccacbbc4f00ed059ab9ea483d48138132db44b3a20575d7b4"
+SRC_URI[archive.md5sum] = "edae148b31342aecae035051adc70c74"
+SRC_URI[archive.sha256sum] = "1dbe5177df46a9c7250735e05e77129fe7ec04840771accfa87690111ca2c670"
 
 SRC_URI += " \
             file://system-tools-backends \
-	    file://dont-automake.patch \
            "
 
 SRC_URI_append_angstrom = " \
