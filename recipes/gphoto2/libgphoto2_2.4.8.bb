@@ -3,6 +3,8 @@ SECTION = "libs"
 LICENSE = "GPL"
 DEPENDS = "libtool jpeg virtual/libusb0 libexif"
 
+PR = "r1"
+
 # The .fdi and .rules files were generated with:
 #  libgphoto2-2.4.7/packaging/generic$ qemu-arm -s 1048576 -r 2.6.24 -L /OE/angstrom-dev/staging/armv5te-angstrom-linux-gnueabi/ .libs/print-camera-list
 # They are release specific, so please regen when adding new releases
@@ -43,8 +45,8 @@ RDEPENDS_${PN} = "libgphoto2-camlibs"
 
 FILES_libgphotoport = "${libdir}/libgphoto2_port.so.*" 
 
-FILES_${PN} += "${libdir}/udev/* ${datadir}/hal"
-FILES_${PN}-dbg += "${libdir}/*/*/.debug"
+FILES_${PN} += "${base_libdir}/udev/* ${datadir}/hal"
+FILES_${PN}-dbg += "${libdir}/*/*/.debug ${base_libdir}/udev/.debug"
 
 
 
