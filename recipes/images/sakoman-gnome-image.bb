@@ -19,6 +19,8 @@ IMAGE_INSTALL += " \
   nfs-utils nfs-utils-client \
   task-gnome-apps \
   task-gnome-sdk \
+  task-java \
+  task-java-gtk \
   ti-msp430-chronos-apps \
   avrdude \
 #  graphicsmagick \
