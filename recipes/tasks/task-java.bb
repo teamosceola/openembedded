@@ -1,11 +1,11 @@
 DESCRIPTION = "Base task package for Java"
-PR = "r2"
+PR = "r4"
 LICENSE = "MIT"
 
 inherit task
 
 RDEPENDS_${PN} = "\
-    cacao \
+    openjdk-6-jdk \
     classpath-awt \
     java2-runtime \
     librxtx-java \
