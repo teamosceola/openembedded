@@ -2,7 +2,7 @@ require u-boot.inc
 
 FILESDIR = "${@os.path.dirname(bb.data.getVar('FILE',d,1))}/u-boot-sakoman-git/"
 
-SRCREV = "259bdf5e681bba335dd7eee858cdefa8ed1c22d0"
+SRCREV = "f0e0469b8ed5fe21d947f366e1894934d51c2c72"
 
 PV = "2010.12+${PR}+git${SRCREV}"
 
