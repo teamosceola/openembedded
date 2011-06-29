@@ -2,7 +2,7 @@
 
 # Attach to the onboard bluetooth adapter  (allowed values are "true" and "false")
 HCIATTACH_ENABLE=true
-HCIATTACH_TTY=ttyS1
+HCIATTACH_TTY=ttyO1
 HCIATTACH_TYPE=csr
 HCIATTACH_START_SPEED=115200
 HCIATTACH_SPEED=115200

@@ -4,7 +4,7 @@ SECTION = "libs"
 PRIORITY = "optional"
 LICENSE = "GPLv2/LGPLv2.1"
 DEPENDS = "gst-plugins-base alsa-lib virtual/libusb0 dbus-glib"
-INC_PR = "r9"
+INC_PR = "r10"
 
 # temporary solution until bug 5176 is properly fixed
 PROVIDES += "bluez-utils bluez-libs bluez-utils-dbus"
