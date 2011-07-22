@@ -8,8 +8,11 @@
 # Parts of the procudure base on the work of Denys Dmytriyenko
 # http://wiki.omap.com/index.php/MMC_Boot_Format
 
-VERSION=0.8
+VERSION=0.9
 RELEASE="gnome-r13"
+
+# hack to use a particular kernel variant
+KERNEL_VARIANT=""
 
 export LC_ALL=C
 
@@ -106,7 +109,8 @@ CYLINDERS=`echo $SIZE/255/63/512 | bc`
 
 echo CYLINDERS – $CYLINDERS
 
-# FAT size is 131072 sectors (64MB) less:
+# Align partitions for SD card performance/wear optimization
+# FAT partition size is 131072 sectors (64MB) less:
 #	MBR - 1 sector
 #       padding to align to the page size of the underlying flash - 127 sectors
 # so we start the first partition at sector 128 and make it 131072 - 128 = 130944 sectors
@@ -148,8 +152,8 @@ else
 	if [ "$RELEASE" = "current" ]; then	
 		wget $MACHURL/MLO
 		wget $MACHURL/u-boot.bin
-		wget $ARCHURL/uImage-pm
-		mv   uImage-pm uImage
+		wget $ARCHURL/uImage$KERNEL_VARIANT
+		mv   uImage$KERNEL_VARIANT uImage
 		wget $ARCHURL/sakoman-$IMAGE-image.tar.bz2
 	else
 		if wget $MACHURL/MLO-$MACHINE-$RELEASE; then
@@ -160,8 +164,8 @@ else
 			mv   u-boot-$MACHINE-$RELEASE.bin u-boot.bin
 		fi
 
-		if wget $ARCHURL/uImage-pm-$ARCH-$RELEASE.bin; then
-			mv   uImage-pm-$ARCH-$RELEASE.bin uImage
+		if wget $ARCHURL/uImage$KERNEL_VARIANT-$ARCH-$RELEASE.bin; then
+			mv   uImage$KERNEL_VARIANT-$ARCH-$RELEASE.bin uImage
 		fi
 
 		if wget $ARCHURL/sakoman-$IMAGE-image-$ARCH-$RELEASE.tar.bz2; then
