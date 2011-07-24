@@ -30,7 +30,9 @@ FIRMWARE_INSTALL = " \
  "
 
 TOOLS_INSTALL = " \
+  aircrack-ng \
   bash \
+  bluez-hcidump \
   bzip2 \
   ckermit \
   cpufrequtils \
@@ -48,6 +50,7 @@ TOOLS_INSTALL = " \
   iftop \
   iw \
   ksymoops \
+  lrzsz \
   lsof \
   memtester \
   mkfs-jffs2 \
