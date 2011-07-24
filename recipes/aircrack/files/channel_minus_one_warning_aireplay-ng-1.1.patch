@@ -1,0 +1,19 @@
+--- aircrack-ng-1.1-orig/src/aireplay-ng.c	2011-01-26 18:18:16.260000038 +0000
++++ aircrack-ng-1.1/src/aireplay-ng.c	2011-01-26 18:20:02.606000031 +0000
+@@ -723,11 +723,15 @@
+             PCT; printf("No such BSSID available.\n");
+             return -1;
+         }
+-        if(ap_chan != iface_chan)
++        if((ap_chan != iface_chan) && (iface_chan != -1))
+         {
+             PCT; printf("%s is on channel %d, but the AP uses channel %d\n", wi_get_ifname(wi), iface_chan, ap_chan);
+             return -1;
+         }
++        if((ap_chan != iface_chan) && (iface_chan == -1))
++        {
++            PCT; printf("Warning: could not determine the channel %s is on. Make sure it is on channel %d.\n", wi_get_ifname(wi), ap_chan);
++        }
+     }
+ 
+     return 0;
