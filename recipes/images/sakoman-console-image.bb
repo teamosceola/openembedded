@@ -47,6 +47,7 @@ TOOLS_INSTALL = " \
   i2c-tools \
   iftop \
   ksymoops \
+  lattice-tools \
   linux-input \
   lsof \
   memtester \
