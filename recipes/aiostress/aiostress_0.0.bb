@@ -9,7 +9,7 @@ S = "${WORKDIR}"
 
 do_compile() {
 
-	cd ${S} && ${CC} aio-stress.c -o aio-stress -I${STAGING_INCDIR} -L${STAGING_LIBDIR} -laio -lpthread
+	cd ${S} && ${CC} ${LDFLAGS} aio-stress.c -o aio-stress -I${STAGING_INCDIR} -L${STAGING_LIBDIR} -laio -lpthread
 }
 
 do_install() {
