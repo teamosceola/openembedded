@@ -2,7 +2,9 @@ DESCRIPTION = "File Alteration Monitor"
 SECTION = "libs"
 PRIORITY = "optional"
 LICENSE = "GPL LGPL"
-PR = "r1"
+PR = "r2"
+
+RCONFLICTS = "gamin"
 
 SRC_URI = "ftp://oss.sgi.com/projects/fam/download/stable/fam-${PV}.tar.gz \
            file://compile-fix.patch \
