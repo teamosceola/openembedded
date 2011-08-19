@@ -1,8 +1,7 @@
 linux-sakoman
-minimal-image
+sakoman-minimal-image
 sakoman-console-image
 sakoman-gnome-image
-abiword
 abiword-plugins
 acct
 ace
