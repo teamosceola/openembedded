@@ -1,5 +1,7 @@
 LICENSE = "GPL"
-DEPENDS = "guile libggz ggz-client-libs python-pygtk gtk+ libgnome libgnomeui librsvg gnome-vfs gconf libglade gnome-common gnome-python-desktop gnome-python gstreamer"
+DEPENDS = "bug-buddy guile libggz ggz-client-libs python-pygtk gtk+ libgnome libgnomeui librsvg gnome-vfs gconf libglade gnome-common gnome-python-desktop gnome-python gstreamer"
+
+PR = "r1"
 
 inherit gnome distutils-base gconf
 
