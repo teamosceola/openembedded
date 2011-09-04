@@ -14,7 +14,7 @@ DEFAULT_PREFERENCE = "-1"
 DEPENDS = "gperf-native usbutils acl glib-2.0"
 
 SRCREV = "${PV}"
-PR = "r2"
+PR = "r3"
 
 # version specific SRC_URI
 SRC_URI = "git://git.kernel.org/pub/scm/linux/hotplug/udev.git;protocol=git \
