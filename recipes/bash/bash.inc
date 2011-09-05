@@ -32,6 +32,7 @@ pkg_postinst () {
 	touch $D${sysconfdir}/shells
 	grep -q "bin/bash" $D${sysconfdir}/shells || echo /bin/bash >> $D${sysconfdir}/shells
 	grep -q "bin/sh" $D${sysconfdir}/shells || echo /bin/sh >> $D${sysconfdir}/shells
+	update-alternatives --install ${bindir}/sh sh bash 100
 }
 
 PACKAGES += "bash-sh"
