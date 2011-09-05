@@ -1,11 +1,10 @@
-PR = "r1"
+PR = "r2"
 
 DEPENDS = "libpam"
 RDEPENDS_${PN} = "libpam libpam-meta"
 
 SRC_URI = "http://ftp.sudo.ws/sudo/dist/sudo-${PV}.tar.gz;name=src \
   file://sudo.pamd \
-  file://adduser.patch \
 "
 
 SRC_URI[src.md5sum] = "1ae12d3d22e7ffedbf2db26f957676f0"
