@@ -6,8 +6,3 @@
  daemon:*:1:1:daemon:/usr/sbin:/bin/sh
  bin:*:2:2:bin:/bin:/bin/sh
  sys:*:3:3:sys:/dev:/bin/sh
-@@ -16,3 +16,4 @@ list:*:38:38:Mailing List Manager:/var/l
- irc:*:39:39:ircd:/var/run/ircd:/bin/sh
- gnats:*:41:41:Gnats Bug-Reporting System (admin):/var/lib/gnats:/bin/sh
- nobody:*:65534:65534:nobody:/nonexistent:/bin/sh
-+user:$6$aovns/kr$vvj0goISt8DGY3YOSpMZefDUH/OKdmy1.KYIa2RxlEmp7lxCJToS.m80//rJ6.NeAtzbtT.YDLpV4AI.Mb7L50:1009:1009:User,,,:/home/user:/bin/sh
