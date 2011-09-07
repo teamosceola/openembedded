@@ -12,7 +12,7 @@ XSERVER ?= "xserver-xorg \
            xf86-input-keyboard \
 "
 
-PR = "r17"
+PR = "r18"
 
 PACKAGES += "task-gnome-apps task-gnome-sdk task-gnome-fonts task-gnome task-gnome-gstreamer task-gnome-perl task-gnome-cups task-gnome-pulseaudio task-gnome-themes task-gnome-totem task-gnome-xserver-base task-gnome-xserver"
 
@@ -46,12 +46,14 @@ RDEPENDS_task-gnome-apps = " \
 RDEPENDS_task-gnome-sdk = " \
   cron cron-dev \
   geany \
+  gettext gettext-dev \
   git \
   gtk+-dev \
+  intltool intltool-dev \
   ldd \
   libltdl \
   libtool libtool-dev \
-  pkgconfig \
+  pkgconfig pkgconfig-dev \
   subversion \
   texinfo \
   task-native-sdk \
