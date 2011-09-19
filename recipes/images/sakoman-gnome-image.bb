@@ -2,7 +2,7 @@
 
 require sakoman-console-image.bb
 
-IMAGE_LINGUAS = "en-gb en-us de-de es-es fr-fr ja-jp"
+IMAGE_LINGUAS = "en-gb en-us de-de es-es fr-fr it-it ja-jp"
 ROOTFS_POSTPROCESS_COMMAND += 'install_linguas;'
 IMAGE_PREPROCESS_COMMAND = "create_etc_timestamp"
 
