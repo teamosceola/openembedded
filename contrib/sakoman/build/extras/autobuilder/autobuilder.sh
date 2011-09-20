@@ -39,6 +39,7 @@ BUILD_TARGETS_ARCH=" \
                 linux-sakoman \
                 sakoman-minimal-image \
                 sakoman-console-image \
+                sakoman-consoledev-image \
                 sakoman-gnome-image \
                 linux-sakoman-initramfs-ro \
                 linux-sakoman-wl1271 \
@@ -135,6 +136,7 @@ then
     cp --update $TMPDIR/deploy/$BUILD_LIBC/images/$machine/uImage-wl1271-$machine.bin			$ARCHIVE/$machine/$REVISION/uImage-wl1271-$machine-$REVISION.bin
     cp --update $TMPDIR/deploy/$BUILD_LIBC/images/$machine/sakoman-minimal-image-$machine.tar.bz2	$ARCHIVE/$machine/$REVISION/sakoman-minimal-image-$machine-$REVISION.tar.bz2
     cp --update $TMPDIR/deploy/$BUILD_LIBC/images/$machine/sakoman-console-image-$machine.tar.bz2	$ARCHIVE/$machine/$REVISION/sakoman-console-image-$machine-$REVISION.tar.bz2
+    cp --update $TMPDIR/deploy/$BUILD_LIBC/images/$machine/sakoman-consoledev-image-$machine.tar.bz2	$ARCHIVE/$machine/$REVISION/sakoman-consoledev-image-$machine-$REVISION.tar.bz2
     cp --update $TMPDIR/deploy/$BUILD_LIBC/images/$machine/sakoman-gnome-image-$machine.tar.bz2		$ARCHIVE/$machine/$REVISION/sakoman-gnome-image-$machine-$REVISION.tar.bz2
     cp --update $TMPDIR/deploy/$BUILD_LIBC/images/$machine/modules-*-*-$machine.tgz			$ARCHIVE/$machine/$REVISION/modules-$machine-$REVISION.tgz
     cp --update $OETOP/openembedded/contrib/sakoman/mksdcard.sh						$ARCHIVE/$machine/$REVISION/
@@ -145,6 +147,7 @@ then
     md5sum uImage-initramfs-ro-$machine-$REVISION.bin >> md5sum.txt
     md5sum uImage-wl1271-$machine-$REVISION.bin >> md5sum.txt
     md5sum sakoman-console-image-$machine-$REVISION.tar.bz2 >> md5sum.txt
+    md5sum sakoman-consoledev-image-$machine-$REVISION.tar.bz2 >> md5sum.txt
     md5sum sakoman-minimal-image-$machine-$REVISION.tar.bz2 >> md5sum.txt
     md5sum sakoman-gnome-image-$machine-$REVISION.tar.bz2 >> md5sum.txt
     md5sum modules-$machine-$REVISION.tgz >> md5sum.txt
@@ -153,16 +156,17 @@ then
     rm -rf $ARCHIVE/$machine/current
     mkdir -p $ARCHIVE/$machine/current
     echo $REVISION > $ARCHIVE/$machine/current/current-is-$REVISION
-    ln -s $ARCHIVE/$machine/$REVISION/md5sum.txt					$ARCHIVE/$machine/current/md5sum.txt
-    ln -s $ARCHIVE/$machine/$REVISION/sakoman-oe-commit-id.txt				$ARCHIVE/$machine/current/sakoman-oe-commit-id.txt
-    ln -s $ARCHIVE/$machine/$REVISION/uImage-$machine-$REVISION.bin			$ARCHIVE/$machine/current/uImage
-    ln -s $ARCHIVE/$machine/$REVISION/uImage-initramfs-ro-$machine-$REVISION.bin	$ARCHIVE/$machine/current/uImage-initramfs-ro
-    ln -s $ARCHIVE/$machine/$REVISION/uImage-wl1271-$machine-$REVISION.bin		$ARCHIVE/$machine/current/uImage-wl1271
-    ln -s $ARCHIVE/$machine/$REVISION/sakoman-minimal-image-$machine-$REVISION.tar.bz2	$ARCHIVE/$machine/current/sakoman-minimal-image.tar.bz2
-    ln -s $ARCHIVE/$machine/$REVISION/sakoman-console-image-$machine-$REVISION.tar.bz2	$ARCHIVE/$machine/current/sakoman-console-image.tar.bz2
-    ln -s $ARCHIVE/$machine/$REVISION/sakoman-gnome-image-$machine-$REVISION.tar.bz2	$ARCHIVE/$machine/current/sakoman-gnome-image.tar.bz2
-    ln -s $ARCHIVE/$machine/$REVISION/modules-$machine-$REVISION.tgz			$ARCHIVE/$machine/current/modules.tgz
-    ln -s $ARCHIVE/$machine/$REVISION/mksdcard.sh					$ARCHIVE/$machine/current/mksdcard.sh
+    ln -s $ARCHIVE/$machine/$REVISION/md5sum.txt						$ARCHIVE/$machine/current/md5sum.txt
+    ln -s $ARCHIVE/$machine/$REVISION/sakoman-oe-commit-id.txt					$ARCHIVE/$machine/current/sakoman-oe-commit-id.txt
+    ln -s $ARCHIVE/$machine/$REVISION/uImage-$machine-$REVISION.bin				$ARCHIVE/$machine/current/uImage
+    ln -s $ARCHIVE/$machine/$REVISION/uImage-initramfs-ro-$machine-$REVISION.bin		$ARCHIVE/$machine/current/uImage-initramfs-ro
+    ln -s $ARCHIVE/$machine/$REVISION/uImage-wl1271-$machine-$REVISION.bin			$ARCHIVE/$machine/current/uImage-wl1271
+    ln -s $ARCHIVE/$machine/$REVISION/sakoman-minimal-image-$machine-$REVISION.tar.bz2		$ARCHIVE/$machine/current/sakoman-minimal-image.tar.bz2
+    ln -s $ARCHIVE/$machine/$REVISION/sakoman-console-image-$machine-$REVISION.tar.bz2		$ARCHIVE/$machine/current/sakoman-console-image.tar.bz2
+    ln -s $ARCHIVE/$machine/$REVISION/sakoman-consoledev-image-$machine-$REVISION.tar.bz2	$ARCHIVE/$machine/current/sakoman-consoledev-image.tar.bz2
+    ln -s $ARCHIVE/$machine/$REVISION/sakoman-gnome-image-$machine-$REVISION.tar.bz2		$ARCHIVE/$machine/current/sakoman-gnome-image.tar.bz2
+    ln -s $ARCHIVE/$machine/$REVISION/modules-$machine-$REVISION.tgz				$ARCHIVE/$machine/current/modules.tgz
+    ln -s $ARCHIVE/$machine/$REVISION/mksdcard.sh						$ARCHIVE/$machine/current/mksdcard.sh
 
   done
 
