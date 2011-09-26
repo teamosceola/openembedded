@@ -40,6 +40,7 @@ TOOLS_INSTALL = " \
   dhcp-client \
   dosfstools \
   ethtool \
+  evtest \
   fbgrab \
   fbida \
   fbset \
@@ -74,6 +75,7 @@ TOOLS_INSTALL = " \
  "
 
 SDK_INSTALL = " \
+  boost-dev \
   cron cron-dev \
   gettext gettext-dev \
   git \
