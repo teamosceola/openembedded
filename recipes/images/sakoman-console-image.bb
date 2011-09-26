@@ -40,6 +40,7 @@ TOOLS_INSTALL = " \
   dhcp-client \
   dosfstools \
   ethtool \
+  evtest \
   fbgrab \
   fbida \
   fbset \
