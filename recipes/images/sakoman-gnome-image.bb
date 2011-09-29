@@ -23,6 +23,8 @@ IMAGE_INSTALL += " \
   task-java-gtk \
   ti-msp430-chronos-apps \
   avrdude \
+  media-ctl \
+  yavta \
 #  graphicsmagick \
  "
 
