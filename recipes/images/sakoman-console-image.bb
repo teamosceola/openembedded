@@ -69,6 +69,7 @@ TOOLS_INSTALL = " \
   sudo \
   syslog-ng \
   task-proper-tools \
+  u-boot-mkimage \
   u-boot-sakoman-fw-utils \
   wget \
   zip \
