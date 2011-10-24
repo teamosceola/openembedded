@@ -64,6 +64,7 @@ TOOLS_INSTALL = " \
   openssh-ssh \
   picodlp-control \
   procps \
+  rfkill \
   socat \
   strace \
   sudo \

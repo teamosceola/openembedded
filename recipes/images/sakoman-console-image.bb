@@ -50,7 +50,6 @@ TOOLS_INSTALL = " \
   i2c-tools \
   iftop \
   iw \
-  ksymoops \
   lrzsz \
   lsof \
   memtester \
@@ -64,6 +63,7 @@ TOOLS_INSTALL = " \
   openssh-ssh \
   picodlp-control \
   procps \
+  rfkill \
   socat \
   strace \
   sudo \
