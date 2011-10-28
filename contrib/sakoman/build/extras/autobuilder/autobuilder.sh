@@ -26,6 +26,7 @@ fi
 MACHINES_MACH=" \
                 overo \
                 beagleboard \
+                rockhopper \
                "
 # read list of machine dependent targets
 BUILD_TARGETS_MACH=`cat $OETOP/build/extras/autobuilder/targets-mach`

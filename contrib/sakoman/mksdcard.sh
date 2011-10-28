@@ -8,7 +8,7 @@
 # Parts of the procudure base on the work of Denys Dmytriyenko
 # http://wiki.omap.com/index.php/MMC_Boot_Format
 
-VERSION=0.9
+VERSION=1.0
 RELEASE="gnome-r13"
 
 # hack to use a particular kernel variant
@@ -30,6 +30,7 @@ if [ $# -eq 0 ]; then
 	echo "   machine: target machine (default overo)"
 	echo "            beagleboard"
 	echo "            overo"
+	echo "            rockhopper"
 	echo "   image: image name (default gnome)"
 	echo "            console"
 	echo "            gnome"
