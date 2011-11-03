@@ -17,6 +17,7 @@ IMAGE_INSTALL += " \
   ${IMAGE_SPLASH} \
   angstrom-task-gnome \
   nfs-utils nfs-utils-client \
+  sox \
   task-gnome-apps \
   task-gnome-sdk \
   task-java \
