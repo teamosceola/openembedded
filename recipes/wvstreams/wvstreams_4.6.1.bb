@@ -3,10 +3,11 @@ LICENSE = "LGPL"
 DESCRIPTION = "WvStreams is a network programming library in C++"
 DEPENDS = "zlib openssl (>= 0.9.8)"
 
-PR = "r0"
+PR = "r1"
 
 SRC_URI = "http://wvstreams.googlecode.com/files/${PN}-${PV}.tar.gz \
 	file://0001-Fixed-missing-header-includes.patch \
+        file://wvstreams-4.6.1-arm_replace_getcontext.patch \
 	"
 
 inherit autotools pkgconfig
