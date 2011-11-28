@@ -255,14 +255,14 @@ RRECOMMENDS_${PN} = "omap3-sgx-modules"
 RDEPENDS_${PN} += "fbset devmem2"
 
 #HACK! These are binaries, so we can't guarantee that LDFLAGS match :(
-INSANE_SKIP_${PN} = True
-INSANE_SKIP_${PN}-blitwsegl = True
-INSANE_SKIP_${PN}-flipwsegl = True
-INSANE_SKIP_${PN}-frontwsegl = True
-INSANE_SKIP_${PN}-linuxfbwsegl = True
-INSANE_SKIP_${PN}-x11wsegl = True
-INSANE_SKIP_${PN}-tests = True
-INSANE_SKIP_xserver-kdrive-powervrsgx = True
+INSANE_SKIP_${PN} = "ldflags dev-so"
+INSANE_SKIP_${PN}-blitwsegl = "ldflags"
+INSANE_SKIP_${PN}-flipwsegl = "ldflags"
+INSANE_SKIP_${PN}-frontwsegl = "ldflags"
+INSANE_SKIP_${PN}-linuxfbwsegl = "ldflags"
+INSANE_SKIP_${PN}-x11wsegl = "ldflags dev-so"
+INSANE_SKIP_${PN}-tests = "ldflags"
+INSANE_SKIP_xserver-kdrive-powervrsgx = "ldflags"
 
 # Quality control is really poor on these SDKs, so hack around the latest madness:
 FILES_${PN} += "${libdir}/*.so "
