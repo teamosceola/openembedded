@@ -1,7 +1,7 @@
 DESCRIPTION = "Gnome bug buddy"
 LICENSE = "GPL"
 SECTION = "x11/gnome"
-DEPENDS = "gtk+ gconf "
+DEPENDS = "gtk+ gconf libelf"
 
 inherit gnome
 
