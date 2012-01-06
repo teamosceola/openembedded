@@ -1,0 +1,10 @@
+--- GFX_Linux_KM/services4/3rdparty/dc_omapfb3_linux/omaplfb_linux.c-orig	2011-12-13 05:14:15.000000000 -0800
++++ GFX_Linux_KM/services4/3rdparty/dc_omapfb3_linux/omaplfb_linux.c	2012-01-04 10:14:30.000000000 -0800
+@@ -80,6 +80,7 @@
+ #include "img_defs.h"
+ #include "servicesext.h"
+ #include "kerneldisplay.h"
++#include <video/omapdss.h>
+ #include "omaplfb.h"
+ #include "pvrmodule.h"
+ #if defined(SUPPORT_DRI_DRM)
