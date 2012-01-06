@@ -3,7 +3,7 @@ removing kernel modules for Linux (versions 2.5.48 and above). It serves \
 the same function that the modutils package serves for Linux 2.4."
 LICENSE = "GPLv2"
 SECTION = "base"
-PR = "r6"
+PR = "r7"
 
 PACKAGES =+ "${PN}-insmod-static ${PN}-depmod"
 RDEPENDS_${PN} += "${PN}-depmod"
