@@ -26,6 +26,7 @@ IMAGE_INSTALL += " \
   avrdude \
   media-ctl \
   yavta \
+  u-boot-mkimage \
 #  graphicsmagick \
  "
 
