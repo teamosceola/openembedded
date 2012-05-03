@@ -1,3 +1,17 @@
 # By default there is nothing in this file just a reminder to define some
 # modes in OE
+mode "800x600 8-bit 60 Hz"
+	# D: 40.00 MHz H: 37.879 kHz V: 60.32 Hz
+	geometry 800 600 800 600 8
+	timings 25000 88 40 23 1 128 4
+	hsync high
+	vsync high
+endmode
+
+mode "720x482-30"
+    # D: 13.500 MHz, H: 15.734 kHz, V: 29.970 Hz
+    geometry 720 482 720 482 32
+    timings 74074 58 16 31 6 64 6
+    rgba 8/16,8/8,8/0,0/0
+endmode
 

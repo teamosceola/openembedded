@@ -5,7 +5,7 @@ inherit image
 DEPENDS = "task-base"
 
 RRECOMMENDS_${PN}_append_omap3-multi = " \
-  libgles-omap3 \
+#  libgles-omap3 \
   omap3-writeprom \
  "
 
@@ -30,7 +30,7 @@ FIRMWARE_INSTALL = " \
  "
 
 TOOLS_INSTALL = " \
-  aircrack-ng \
+#  aircrack-ng \
   bash \
   bluez-hcidump \
   bzip2 \
@@ -77,7 +77,7 @@ TOOLS_INSTALL = " \
 
 IMAGE_INSTALL += " \
   ${BASE_INSTALL} \
-  ${AUDIO_INSTALL} \
+#  ${AUDIO_INSTALL} \
   ${FIRMWARE_INSTALL} \
   ${IMAGE_EXTRA_INSTALL} \
   ${TOOLS_INSTALL} \

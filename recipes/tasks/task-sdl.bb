@@ -6,17 +6,17 @@ inherit task
 
 PACKAGES = "\
   task-sdl-libs \
-  task-sdl-games \
-  task-sdl-emulators \
+#  task-sdl-games \
+#  task-sdl-emulators \
 #  task-sdl-misc \
 "
 
 # no need to add libsdl as all libsdl-* already rdepend on it
 RDEPENDS_task-sdl-libs = "\
-  libsdl-gfx \
+  libsdl-ttf \
   libsdl-image \
   libsdl-mixer \
-  libsdl-ttf \
+  libsdl-gfx \
   libsdl-net \
 "
 

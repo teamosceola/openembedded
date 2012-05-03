@@ -1,7 +1,7 @@
 DESCRIPTION = "Default display timings and resolutions for fbset"
 LICENSE = "MIT"
 PV = "0.1.0"
-PR = "r5"
+PR = "r6"
 
 SRC_URI = "file://fb.modes"
 

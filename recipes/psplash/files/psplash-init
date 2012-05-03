@@ -21,4 +21,4 @@ mount tmpfs -t tmpfs $TMPDIR -o,size=40k
 /usr/bin/psplash $PARAMS &
 
 # Timetrap against hanging with splash hiding console messages.
-(sleep 120; psplash-write "QUIT") &
+(sleep 10; psplash-write "QUIT") &

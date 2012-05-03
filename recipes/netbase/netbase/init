@@ -73,6 +73,7 @@ case "$1" in
             echo "NOT configuring network interfaces: network shares still mounted."
         else
             echo -n "Configuring network interfaces... "
+            ifdown -a
             ifup -a
 	    echo "done."
  	    # /etc/sysctl.conf is preferred
