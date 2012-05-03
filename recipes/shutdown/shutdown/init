@@ -1,0 +1,22 @@
+# ***************************************************************************
+# Shutdown Power Script
+# Richard Manley
+# Feb 2011
+#  -------------------------------------------------------------------------
+# This script Initalizes the gpio pin 170 as an output pin
+# and brings the pin low.  This trigers the power chip to turn off power
+# rc1.d/K25Shutdown link to this file
+# **************************************************************************
+rm /etc/udev/rules.d/70-persistent-net.rules
+
+#Setting up the gpio pin 170 
+	echo starting gpio pin shutdown
+	echo 170 > /sys/class/gpio/export
+
+#Setting pin 170 as output brings the pin low automaticaly
+	echo setup pin 170
+	echo out > /sys/class/gpio/gpio170/direction
+	echo bringing low
+
+#If used with power chip, power will be turned of by this point
+	echo DONE!!

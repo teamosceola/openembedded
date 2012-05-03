@@ -1,0 +1,2 @@
+echo "turning on OLED"
+./../../home/root/Programs/turnon_oled

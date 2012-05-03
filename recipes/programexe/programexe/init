@@ -1,0 +1,36 @@
+#!/bin/bash
+
+echo "entering program lounch script"
+echo 146 > //sys/class/gpio/export
+echo in > //sys/class/gpio/direction
+
+echo 114 > //sys/class/gpio/export
+echo in > //sys/class/gpio/direction
+
+BUTTON1="//sys/class/gpio/gpio114/value"
+BUTTON2="//sys/class/gpio/gpio146/value"
+devmem2 0x48002138 h 0x104
+
+cat $BUTTON1 | while read LINE1
+do
+   echo $LINE1
+   
+cat $BUTTON2 | while read LINE2
+do
+	echo $LINE2
+
+
+#buttons are 0 if pressed
+if [ "$LINE1" -eq "0" -a "$LINE2" -eq "0" ]
+then
+	echo "lanching Compass Calibration Program"
+	./../../home/root/Programs/Exec/exe_mask_cal
+else
+	echo "Lanching Combat Mask Program"
+	./../../home/root/Programs/Exec/exe_program
+fi
+
+done
+done
+
+
