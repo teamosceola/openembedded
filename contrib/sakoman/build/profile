@@ -4,7 +4,7 @@
 
 export BB_ENV_EXTRAWHITE="MACHINE DISTRO ANGSTROM_MODE OETOP OEBRANCH USERBRANCH TITOOLSDIR"
 
-export OETOP=`pwd`
+export OETOP="/home/${USER}/gnome-r13"
 export OEBRANCH="${OETOP}/openembedded"
 export USERBRANCH="${OETOP}/user.collection"
 
