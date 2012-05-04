@@ -1,10 +1,8 @@
 DESCRIPTION = "This package sets up the programs folder - Chris Crews"
 SECTION = "base"
-PR = "r6"
+PR = "r13"
 
-inherit base
-
-PACKAGES = "${PN}"
+#PACKAGES = "${PN}"
 
 SRC_URI = "\
   file://Programs.tar.gz \
@@ -13,23 +11,19 @@ SRC_URI = "\
 S = "${WORKDIR}/Programs"
 
 do_install () {
-	install -m 0755 -d ${D}/home/root/Programs/Exec
-	install -m 0755 -d ${D}/home/root/Programs/Fonts
-	install -m 0755 -d ${D}/home/root/Programs/Graphics
-	install -m 0755 -d ${D}/home/root/Programs/Config_files
+	install -m 0755 -d ${D}/usr/bin/Programs/Exec
+	install -m 0755 -d ${D}/usr/bin/Programs/Fonts
+	install -m 0755 -d ${D}/usr/bin/Programs/Graphics
+	install -m 0755 -d ${D}/usr/bin/Programs/Config_files
 	
-	install -m 0755 ${S}/* ${D}/home/root/Programs/
-	install -m 0755 ${S}/Fonts/* ${D}/home/root/Programs/Fonts/
-	install -m 0755 ${S}/Graphics/* ${D}/home/root/Programs/Graphics/
-	install -m 0755 ${S}/Config_files/* ${D}/home/root/Programs/Config_files/
-	install -m 0755 ${S}/Exec/* ${D}/home/root/Programs/Exec/
+	cp -rf ${S} ${D}/usr/bin/.
 }
 
-FILES_${PN} = " \
-  /home/root/Programs/* \ 
-  /home/root/Programs/Exec/* \
-  /home/root/Programs/Fonts/* \
-  /home/root/Programs/Graphics/* \
-  /home/root/Programs/Config_files/* \
-"
+#FILES_${PN} = " \
+#  /usr/bin/Programs/* \ 
+#  /usr/bin/Programs/Exec/* \
+#  /usr/bin/Programs/Fonts/* \
+#  /usr/bin/Programs/Graphics/* \
+#  /usr/bin/Programs/Config_files/* \
+#"
 

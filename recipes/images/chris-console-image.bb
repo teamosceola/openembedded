@@ -39,7 +39,7 @@ TOOLS_INSTALL = " \
   turnonlumus \
   programexe \
   shutdown \
-  programs \
+#  programs \
   bash \
   bzip2 \
   cpufrequtils \
